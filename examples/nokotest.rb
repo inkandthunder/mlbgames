@@ -1,5 +1,11 @@
+#require 'nokogiri'
+#require 'open-uri'
+#require 'HTTParty'
 
+$: << File.dirname(__FILE__) + '/../lib'
 
+require 'rubygems'
+require 'mlbgames'
 
 #f = File.open("http://gd2.mlb.com/components/game/mlb/year_2017/month_04/day_25/scoreboard.xml")
 #xml_doc  = Nokogiri::XML(f)
@@ -18,6 +24,9 @@ doc.scoreboard.go_game.each do |event|
     #puts event.team["name"] #+ ": " + event.team.gameteam["R"]
     puts ""
 end
+
+
+game = Mlbgames::Base.find_all_games_by_team('BOS').first
 
 
 #doc = Nokogiri::HTML(open("http://www.google.com/search?q=doughnuts"))

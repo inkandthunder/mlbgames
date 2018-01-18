@@ -1,6 +1,10 @@
-require 'httparty'
+#require 'httparty'
 require 'pp'
 #require "mlbgames/version"
+
+require 'nokogiri'
+require 'open-uri'
+require 'HTTParty'
 
 module Mlbgames
   HOST = 'gd2.mlb.com'
@@ -34,7 +38,7 @@ module Mlbgames
 
   p1 = Gameday.new('2016', '07', '18')
 
-  puts Gameday.search(p1)
+  #puts Gameday.search(p1)
   
   #TARGET = BASE_URL + 'year_2016/month_08/day_20/grid.json'
   #puts BASE_URL
